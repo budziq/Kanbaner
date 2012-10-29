@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="VpiAbsTest_custom" default="help">
+  <property name="apt_generated.dir" value="${basedir}/.apt_generated/"/>
+  <!-- Basic Ant + SDK check -->
+  <target name="-check-env" depends="setup-deps">
+    <checkenv/>
+  </target>
+  <target name="-pre-clean" depends="setup-deps">
+    </target>
+  <target name="gen-ant">
+    <if>
+      <condition>
+        <resourceexists>
+          <file file="${lib-dir}/build.xml"/>
+        </resourceexists>
+      </condition>
+      <then>
+        <echo>       build.xml in: '${lib-dir}' already exists  </echo>
+      </then>
+      <else>
+        <echo>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</echo>
+        <echo>       Setting up ant build.xml for dep:          </echo>
+        <echo>       ${lib-dir}                                 </echo>
+        <echo>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</echo>
+        <exec executable="android">
+          <arg value="update"/>
+          <arg value="project"/>
+          <arg value="-p"/>
+          <arg value="${lib-dir}"/>
+        </exec>
+      </else>
+    </if>
+  </target>
+  <target name="git-submodules">
+    <exec executable="git">
+      <arg value="submodule"/>
+      <arg value="init"/>
+    </exec>
+    <exec executable="git">
+      <arg value="submodule"/>
+      <arg value="update"/>
+    </exec>
+  </target>
+  <target name="setup-deps" depends="git-submodules">
+    <antcall target="gen-ant">
+      <param name="lib-dir" value="./deps/Android-ViewPagerIndicator/library/"/>
+    </antcall>
+    <antcall target="gen-ant">
+      <param name="lib-dir" value="./deps/ActionBarSherlock/library/"/>
+    </antcall>
+  </target>
+</project>

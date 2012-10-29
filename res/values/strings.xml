@@ -2,7 +2,7 @@
 
     <string name="app_name">Kanbaner</string>
     <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_item_refresh">Refresh</string>
     <string name="title_activity_boards">BoardsActivity</string>
 
 </resources>
