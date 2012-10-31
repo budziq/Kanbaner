@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.budziq.kanbaner"
     android:orientation="vertical"
+    android:background="@color/app_bg"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
@@ -15,6 +16,10 @@
         app:footerIndicatorHeight="5dp"
         app:footerLineHeight="4dp"
         app:selectedBold="true"
+        
+        textColor="@color/vpi_text"
+        app:footerColor="@color/vpi_indicator"
+        app:selectedColor="@color/vpi_text"
         app:titlePadding="10dp" />
 
     <android.support.v4.view.ViewPager

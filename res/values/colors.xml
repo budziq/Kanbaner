@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="bar_bg">#383838</color>
+    <color name="bar_text">#E14D42</color>
+    <color name="vpi_text">#E4EBCE</color>
+    <color name="vpi_indicator">#D34B3D</color>
+    <color name="app_bg">#4E4E4E</color>
+</resources>

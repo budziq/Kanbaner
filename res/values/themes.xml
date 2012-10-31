@@ -8,11 +8,13 @@
     <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
         <item name="titleTextStyle">@style/TitleText</item>
         <item name="android:titleTextStyle">@style/TitleText</item>
+        <item name="background">@drawable/actionbar_bg</item>
+        <item name="android:background">@drawable/actionbar_bg</item>
     </style>
     
     <!-- Title on action bar -->
      <style name="TitleText" >
-        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textColor">@color/bar_text</item>
         <item name="android:textSize">17dip</item>
     </style>
 </resources>
